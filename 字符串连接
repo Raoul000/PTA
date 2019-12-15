@@ -1,0 +1,30 @@
+/*函数接口定义：
+int my_strcat(char str1[],int x,char str2[]);
+参数str1和str2是用户传入的字符串。x是str1数组的长度。 
+函数将字符串str2连接到字符str1末尾。
+应注意的是，保证连接后的字符串长度不超出数组str1的长度，超出部分截断，且返回0；否则返回1。*/
+int my_strcat(char str1[], int x, char str2[])
+{
+	int i = 0, j = 0, m, n = 0;
+	while (str1[i] != '\0')	i++;
+	while (str2[j] != '\0')	j++;
+	i--; j--;
+	if ((x - i) >= j)
+	{
+		for (m = i + 1; n <= j; n++, m++)
+		{
+			str1[m] = str2[n];
+		}
+		str1[m] = '\0';
+		return 1;
+	}
+	else
+	{
+		for (m = i + 1; m < x - 1; n++, m++)
+		{
+			str1[m] = str2[n];
+		}
+		str1[x - 1] = '\0';
+		return 0;
+	}
+}
