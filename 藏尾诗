@@ -1,0 +1,21 @@
+本题要求编写一个解密藏尾诗的程序。
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[100][100], arr[10];
+    int i = 0, a;
+
+    for( i = 0; i < 4; i++ ) {
+        scanf("\n");
+        scanf("%s", &str[i]);
+        a = strlen( str[i] );
+        arr[2*i] = str[i][a-2];
+        arr[2*i+1] = str[i][a-1];
+    }
+    arr[8] = '\0';
+    printf("%s\n", arr);
+
+    return 0;
+}
