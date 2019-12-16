@@ -1,0 +1,15 @@
+本题将5个字符串从小到大排序后输出（用指针数组实现）。
+void fsort(char *color[ ], int n){
+    int i,j;
+    char *item;
+    for(i=1;i<n;i++){
+        for(j=0;j<n-i;j++){
+            if(strcmp(color[j],color[j+1])>0){
+                item=color[j+1];
+                color[j+1]=color[j];
+                color[j]=item;
+            }
+        }
+    }
+
+}
