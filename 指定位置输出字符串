@@ -1,0 +1,29 @@
+本题要求实现一个函数，对给定的一个字符串和两个字符，打印出给定字符串中从与第一个字符匹配的位置开始到与第二个字符匹配的位置之间的所有字符。
+char *match( char *s, char ch1, char ch2 ) {
+    int i, n = strlen( s ), f = 0;
+    char *p;
+
+    for( i = 0; i < n; i++ ) {
+        if( s[i] == ch1 ) {
+        	p = &s[i];
+            for( i; i < n; i++ ) {
+                printf("%c", s[i]);
+                f = 1;
+                if( s[i] == ch2 || i == n - 1 ) {
+                	printf("\n");
+                    break;
+                }
+            }
+        }
+        if( f == 1 ) {
+            break;
+        }
+    }
+
+	if( f == 0 ) {
+    	printf("\n");
+        p = "\0";
+    }
+
+    return p;
+}
