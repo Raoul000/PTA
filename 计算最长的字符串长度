@@ -1,0 +1,17 @@
+本题要求实现一个函数，用于计算有n个元素的指针数组s中最长的字符串的长度。
+int max_len( char *s[], int n ) {
+    int i, a, b;
+
+    for( i = 0; i < n; i++ ) {
+        if( i == 0 ) {
+            b = strlen( s[i] );
+            continue;
+        }
+        a = strlen( s[i] );
+        if( a > b ) {
+            b = a;
+        }
+    }
+
+    return b;
+}
