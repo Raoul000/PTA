@@ -1,0 +1,13 @@
+本题要求实现一个函数，将两个字符串连接起来。
+char *str_cat(char *s, char *t)
+{
+	int len;
+	int i;
+	len = strlen(s);
+	for (i = 0; *(t + i) != '\0'; i++)
+	{
+		*(s + i + len) = *(t + i);
+	}
+ 
+	return s;
+}
