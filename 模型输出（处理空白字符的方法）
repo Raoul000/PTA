@@ -1,0 +1,32 @@
+输入数据含有不超过50组的数据，每组数据包括一个可见字符c和一个整数n (1≤n≤30)。 （处理到文件末尾，不知道如何处理文件到文件末尾的同学可以参考公告中的样例）
+
+输出格式:
+输出以c为填充字符，高为n的背靠背字符三角形，勾画每个三角形时都应另起一行。
+
+输入样例:
+H 5
+X 3
+#include <stdio.h>
+#include <math.h>
+int main() {
+	char c;
+	int n;
+	while (scanf(" %c%d", &c, &n) != EOF)     //%c前面有个空格处理空白字符，中间的空格可以不用
+	{
+  //getchar（）或者利用getchar处理
+		for (int i = 1; i <= n; i++) {
+			for (int j = 0; j < n - i; j++) {
+				printf(" ");
+			}
+			for (int k = 0; k < i; k++) {
+				printf("%c", c);
+			}
+			printf(" ");
+			for (int m = 0; m < i; m++) {
+				printf("%c", c);
+			}
+			printf("\n");
+		}
+	}
+	return 0;
+}
